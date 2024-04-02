@@ -7,6 +7,8 @@ namespace BootCamp.Chapter
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Consooe.WriteLine("Hello World!");
+
         }
     }
 }
