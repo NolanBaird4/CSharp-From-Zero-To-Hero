@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Xml.Linq;
-using Console = System.Console;
+using System.Text;
 
 namespace BootCamp.Chapter
 {
-    class Program
+    internal class Lesson3
     {
-        static void Main(string[] args)
+        static void main(string[] args)
+        {
+            Lesson3.Demo();
+        }
+
+
+        public static void Demo()
         {
             string name = AskName("Enter Full Name: ");
-            int age = AskAge(name);
+            int age = AskAge("Enter " + name + "'s age: ");
             float weight = AskStats("Enter " + name + "'s weight in kg: ");
             float height = AskStats("Enter " + name + ",s height in m: ");
             float BMI = CalcBMI(weight, height);
-            Console.WriteLine("Name: "+name+", Age: " + age + ", Weight: " + weight+", Height: "+height+",BMI: "+BMI);
-                
+            Console.WriteLine("Name: " + name + ", Age: " + age + ", Weight: " + weight + ", Height: " + height + ",BMI: " + BMI);
 
         }
+
         public static string AskName(string message)
         {
             Console.Write(message);
@@ -27,9 +31,9 @@ namespace BootCamp.Chapter
 
         }
 
-        public static int AskAge(string name)
+        public static int AskAge(string message)
         {
-            Console.Write("Enter " + name + "'s age: ");
+            Console.Write(message);
             string ageS = Console.ReadLine();
             int ageI = int.Parse(ageS);
             return ageI;
@@ -50,6 +54,5 @@ namespace BootCamp.Chapter
             float BMI = weight / height / height;
             return BMI;
         }
-
     }
 }
